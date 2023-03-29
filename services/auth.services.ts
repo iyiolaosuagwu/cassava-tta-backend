@@ -51,11 +51,6 @@ class AuthService {
         const accessToken = await signAccessToken(user)
         return { ...user, accessToken }
     }
-
-    static async all() {
-        const allUsers = await prisma.user.findMany();
-        return allUsers;
-    }
 }
   
 export default AuthService;

@@ -32,20 +32,6 @@ class authController {
             next(createError(e.statusCode, e.message))
         }
     }
-
-    static all = async (req: Request, res: Response, next: NextFunction) => {
-        try {
-            const users = await AuthService.all();
-            res.status(200).json({
-                status: true,
-                message: 'All users',
-                data: users
-            })
-        }
-        catch (e: any) {
-            next(createError(e.statusCode, e.message))
-        }
-    }
 }
 
 export default authController;
