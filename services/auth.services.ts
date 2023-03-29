@@ -1,15 +1,15 @@
-import { PrismaClient } from '@prisma/client';
+import { CreateUser, LoginUser } from './../dtos/index';
 import * as dotenv from 'dotenv';
 import bcrypt from 'bcryptjs';
 import createError from 'http-errors';
 import { signAccessToken } from '../utils/jwt';
+import prisma from '../client';
 
-const prisma = new PrismaClient();
 
 dotenv.config();
 
 class AuthService {
-    static async register(data: any) {
+    static async register(data: CreateUser) {
         const {email} = data;
         const salt = await bcrypt.genSalt(10);
         const hash = await bcrypt.hash(data.password, salt)
@@ -33,7 +33,7 @@ class AuthService {
         }
     }
     
-    static async login(data: any) {
+    static async login(data: LoginUser) {
         const { email, password } = data;
         const user: any = await prisma.user.findUnique({
             where: {
