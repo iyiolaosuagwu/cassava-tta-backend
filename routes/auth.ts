@@ -4,7 +4,7 @@ import user from '../controllers/auth.controller';
 import auth from '../middlewares/auth';
 
 // register
-router.post('/', user.register);
+router.post('/register', user.register);
 
 // login
 router.post('/login', user.login);
