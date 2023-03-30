@@ -29,7 +29,6 @@ class AuthService {
         })
 
         if (user) {
-            data.accessToken = await signAccessToken(user);
             return data;
         }
     }

@@ -7,7 +7,7 @@ class authController {
     static register = async (req: any, res: Response, next: NextFunction) => {
         try {
             const user = await AuthService.register(req.body);
-            res.status(200).json({
+            res.status(201).json({
                 status: true,
                 message: 'User created successfully',
                 data: user
@@ -28,7 +28,6 @@ class authController {
             })
         }
         catch (e: any) {
-            console.log(e)
             next(createError(e.statusCode, e.message))
         }
     }
