@@ -33,14 +33,17 @@ you need to create a .env file in th root directory, you can find an.
 
 
 ## Routes Link
+```
+Local base url = [http://localhost:3030]
 
-#### Local base url = [http://localhost:3030]
-#### Live base url = [https://cassava-backend.onrender.com]
+Live base url = [https://cassava-backend.onrender.com]
 
-#### base route = ('/')
-#### login route = ('/auth/login')
-#### register route = ('/auth/register')
+base route = ('/')
 
+login route = ('/auth/login')
+
+register route = ('/auth/register')
+```
 ## Deploy Link
 
 Live link: [https://cassava-backend.onrender.com](https://cassava-backend.onrender.com)
