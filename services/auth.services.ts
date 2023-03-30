@@ -22,6 +22,7 @@ class AuthService {
         if (userExists) {
             throw createError.NotFound('User already exists')
         }
+        
         data.password = hash
         let user: any = await prisma.user.create({
             data
